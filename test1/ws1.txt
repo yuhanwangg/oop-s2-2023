@@ -1,0 +1,7 @@
+1. So you know what you've updated from the local git
+
+2. Concise
+
+3. Every second
+
+4. False
