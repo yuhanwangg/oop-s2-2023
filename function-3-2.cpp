@@ -11,12 +11,10 @@ int median_array(int array[], int n) {
   if (n < 1) {
     return 0;
   } else {
-    return array[n / 2];
-  }
-
-  if (n % 2 != 0) {
-    return array[n / 2];
-  } else {
-    return 0;
+    if (n % 2 != 0) {
+      return array[n / 2];
+    } else {
+      return 0;
+    }
   }
 }
