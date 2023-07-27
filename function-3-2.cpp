@@ -6,12 +6,23 @@
 #include <iostream>
 
 int median_array(int array[], int n) {
-  std::sort(array, array + n);
+  // std::sort(array, array + n);
 
   if (n < 1) {
     return 0;
   } else {
     if (n % 2 != 0) {
+      // create bubble sort
+
+      for (int i = 0; i < n; i++) {
+        for (int j = i + 1; j < n; j++) {
+          if (array[i] > array[j]) {
+            int temp = array[i];
+            array[i] = array[j];
+            array[j] = temp;
+          }
+        }
+      }
       return array[n / 2];
     } else {
       return 0;
