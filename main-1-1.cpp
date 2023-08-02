@@ -10,5 +10,5 @@ int main(void){
             array[i][j] = 1;
         }
     }
-    cout << sum_diagonal(array[4][4]) << endl;
+    cout << sum_diagonal(array) << endl;
 }
