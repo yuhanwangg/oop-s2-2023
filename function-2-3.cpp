@@ -11,14 +11,6 @@ bool is_palindrome(int array[], int n) {
   }
 
   if (n % 2 == 0) {
-    for (int i = 1; i < n / 2; i++) {
-      if (array[i] < front) {
-        return false;  // testing for ascending order
-      } else {
-        front = array[i];
-      }
-    }
-
     for (int i = n - 2; i > n / 2; i--) {
       if (array[i] < end) {
         return false;
@@ -37,15 +29,6 @@ bool is_palindrome(int array[], int n) {
     }
     return true;
   } else {
-    // for odd arrays
-    for (int i = 1; i <= (n / 2); i++) {
-      if (array[i] < front) {
-        return false;  // testing for ascending order
-      } else {
-        front = array[i];
-      }
-    }
-
     for (int i = n - 2; i >= (n / 2); i--) {
       if (array[i] < end) {
         return false;
