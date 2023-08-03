@@ -78,7 +78,7 @@ int sum_if_palindrome(int array[], int n) {
   if (n < 1) {
     return -1;
   } else {
-    if (is_palindrome(array, n) == 0) {
+    if (is_palindrome(array, n) == false) {
       return -2;
     } else {
       return sum_array_elements(array, n);
