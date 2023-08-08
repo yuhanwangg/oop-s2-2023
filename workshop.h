@@ -6,5 +6,5 @@
 class workshop {
  protected:
  public:
-}
+};
 #endif
