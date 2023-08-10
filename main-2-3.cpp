@@ -5,7 +5,7 @@ extern bool is_array_palindrome(int integers[], int length);
 extern int sum_integers(int integers[], int length);
 
 int main(void) {
-  int array[5] = {1, 2, 3, 2, 1};
-  int len = 5;
-  cout << palindrome_sum(array, len) << endl;
+  int integers[5] = {1, 2, 3, 2, 1};
+  int length = 5;
+  cout << palindrome_sum(integers, length) << endl;
 }

@@ -25,27 +25,33 @@ int palindrome_sum(int integers[], int length) {
 }
 
 bool is_array_palindrome(int integers[], int length) {
-  if (length > 0) {
-    int j = length;
-    int count = 0;
-    // checking
-    for (int i = 0; i < (length / 2) + 1; i++) {
-      if (integers[i] == integers[j]) {
-        count++;
-        // cout << integers[i] << " " << integers[j] << endl;
-        j--;
+  // for even
+  if (length < 1) {
+    return false;
+  } else {
+    // int end = integers[length - 1];
+    // int front = integers[0];
+    if (length % 2 == 0) {
+      int j = length - 1;
+      for (int i = 0; i < length / 2; i++) {
+        if (integers[i] != integers[j]) {
+          return false;
+        } else {
+          j--;
+        }
       }
-      cout << i << endl;
-      cout << j << endl;
-    }
-
-    if (count == length / 2) {
       return true;
     } else {
-      return false;
+      int j = length - 1;
+      for (int i = 0; i < (length / 2); i++) {  // c++ rounds down
+        if (integers[i] != integers[j]) {
+          return false;
+        } else {
+          j--;
+        }
+      }
+      return true;
     }
-  } else {
-    return false;
   }
 }
 
