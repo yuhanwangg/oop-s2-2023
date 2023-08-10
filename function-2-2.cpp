@@ -10,11 +10,15 @@
 #include <math.h>
 
 int bin_to_int(int binary_digits[], int number_of_digits) {
-  int sum = 0;
-  for (int i = number_of_digits; i > -1; i--) {
+  int integer = 0;
+  int index = 0;
+  for (int i = number_of_digits - 1; i > -1; i--) {
     if (binary_digits[i] == 1) {
-      sum = sum + pow(2, i);
+      integer = integer + pow(2, index);
+      index++;
+    } else {
+      index++;
     }
   }
-  return sum;
+  return integer;
 }
