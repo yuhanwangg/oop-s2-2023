@@ -9,7 +9,7 @@ using namespace std;
 int* readNumbers() {
   int* array = new int[4];
   for (int i = 0; i < 4; i++) {
-    cout << "Enter number: " << endl;
+    // cout << "Enter number: " << endl;
     cin >> array[i];
   }
   return array;
@@ -28,7 +28,7 @@ int secondSmallestSum(int* numbers, int length) {
     for (int j = i; j < length; j++) {
       sum_total = sum_total + numbers[j];
       sum[k] = sum_total;
-      cout << "sum" << sum[k] << endl;
+      //   cout << "sum" << sum[k] << endl;
       k++;
     }
   }
@@ -42,7 +42,7 @@ int secondSmallestSum(int* numbers, int length) {
       sum[i] = min;
       min_index = i;
     }
-    cout << "min: " << min << endl;
+    // cout << "min: " << min << endl;
   }
 
   int m = 0;  // indexing for min_check
@@ -50,7 +50,7 @@ int secondSmallestSum(int* numbers, int length) {
     if (min_index != i) {
       min_check[m] =
           sum[i];  // arranging the same array BUT without the minimum
-      cout << "sum[i]: " << sum[i] << endl;
+                   //   cout << "sum[i]: " << sum[i] << endl;
       m++;
     }
   }
