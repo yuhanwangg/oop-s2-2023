@@ -1,15 +1,16 @@
-#ifndef ORCHESTRA.H
-#define ORCHESTRA .H
-#include <Musician.h>
-
+#ifndef ORCHESTRA_H
+#define ORCHESTRA_H
 #include <iostream>
 #include <string>
+
+#include "Musician.h"
 using namespace std;
 
 class Orchestra {
  private:
   int size;
-  int no_members;
+  int counter;
+  Musician* members;
 
  public:
   Orchestra();          // default constructor
@@ -22,11 +23,13 @@ class Orchestra {
   // instrument otherwise returns false
   bool has_instrument(std::string instrument);
 
-  Musician *get_members();  // returns the array of members of the orchestra
+  Musician* get_members();  // returns the array of members of the orchestra
 
   // returns true and adds new musician to the orchestra if the orchestra is not
   // full otherwise returns false
   bool add_musician(Musician new_musician);
 
   ~Orchestra();
-}
+};
+
+#endif
