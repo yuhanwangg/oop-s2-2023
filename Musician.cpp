@@ -1,4 +1,4 @@
-#include "Musician.h" //class needs to be called the same
+#include "Musician.h"  //class needs to be called the same
 
 Musician::Musician(string s_instrument, int s_experience) {
   instrument = s_instrument;  // no need to redefine the type

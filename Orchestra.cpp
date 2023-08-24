@@ -5,7 +5,10 @@
 #include "Musician.h"
 using namespace std;
 
-Orchestra::Orchestra() { size = 0; };  // default constructor
+Orchestra::Orchestra() {
+  size = 0;
+  counter = 0;
+};  // default constructor
 Orchestra::Orchestra(int size1) {
   size = size1;
   members = new Musician[size];
