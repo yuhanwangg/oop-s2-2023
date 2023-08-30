@@ -1,10 +1,9 @@
 #include "Vehicle.h"
 
-#include <iostream>
-using namespace std;
 #include <string.h>
 
 #include <chrono>
+#include <iostream>
 
 Vehicle::Vehicle(int ID) { this->ID = ID; };
 Vehicle::Vehicle() {

@@ -1,10 +1,10 @@
 #ifndef MOTORBIKE_H
 #define MOTORBIKE_H
+#include <string.h>
+
 #include <iostream>
 
 #include "Vehicle.h"
-using namespace std;
-#include <string.h>
 
 class Motorbike : public Vehicle {
  public:

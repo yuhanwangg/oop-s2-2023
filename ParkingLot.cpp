@@ -1,11 +1,11 @@
 
 #include "ParkingLot.h"
 
+#include <string.h>
+
 #include <iostream>
 
 #include "Vehicle.h"
-using namespace std;
-#include <string.h>
 
 ParkingLot::ParkingLot() {
   max_capacity = 0;
@@ -22,7 +22,7 @@ void ParkingLot::parkVehicle(Vehicle* vehicle) {
     vehicles[count] = *vehicle;
     count++;
   } else {
-    cout << "The lot is full" << endl;
+    std::cout << "The lot is full" << std::endl;
   }
 };
 void ParkingLot::unparkVehicle(int ID) {
@@ -30,7 +30,7 @@ void ParkingLot::unparkVehicle(int ID) {
     if (vehicles[i].getID() == ID) {
       vehicles[i] = NULL;
     } else {
-      cout << "Vehicle not in lot" << endl;
+      std::cout << "Vehicle not in lot" << std::endl;
     }
   }
 };

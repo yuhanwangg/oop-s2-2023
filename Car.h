@@ -1,12 +1,10 @@
 #ifndef CAR_H
 #define CAR_H
+#include <string.h>
+
 #include <iostream>
 
 #include "Vehicle.h"
-using namespace std;
-#include <string.h>
-
-#include <ctime>
 
 class Car : public Vehicle {
  public:

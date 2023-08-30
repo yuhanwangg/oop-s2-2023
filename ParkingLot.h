@@ -1,10 +1,10 @@
 #ifndef PARKINGLOT_H
 #define PARKINGLOT_H
+#include <string.h>
+
 #include <iostream>
 
 #include "Vehicle.h"
-using namespace std;
-#include <string.h>
 
 class ParkingLot {
  protected:

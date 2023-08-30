@@ -1,10 +1,10 @@
 #ifndef BUS_H
 #define BUS_H
+#include <string.h>
+
 #include <iostream>
 
 #include "Vehicle.h"
-using namespace std;
-#include <string.h>
 
 class Bus : public Vehicle {
  public:

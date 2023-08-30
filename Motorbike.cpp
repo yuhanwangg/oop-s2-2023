@@ -3,8 +3,6 @@
 #include <ctime>
 #include <iostream>
 
-using namespace std;
-
 int Motorbike::getParkingDuration() {
   int duration = (time(NULL) - timeofEntry) * 0.85;
   return duration;

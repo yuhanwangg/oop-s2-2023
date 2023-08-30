@@ -3,8 +3,6 @@
 #include <ctime>
 #include <iostream>
 
-using namespace std;
-
 int Car::getParkingDuration() {
   int duration = (time(NULL) - timeofEntry) * 0.9;
   return duration;

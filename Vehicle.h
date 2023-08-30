@@ -1,10 +1,9 @@
 #ifndef VEHICLE_H
 #define VEHICLE_H
-#include <iostream>
-using namespace std;
 #include <string.h>
 
-#include <ctime>
+#include <chrono>
+#include <iostream>
 
 class Vehicle {
  protected:
