@@ -8,15 +8,15 @@ using namespace std;
 
 class ParkingLot {
  protected:
-  Vehicle* vehicles;
   int max_capacity;
   int count;
 
  public:
+  Vehicle* vehicles;
   ParkingLot();
   ParkingLot(int max_capacity);
   int getCount();
-  void parkVehicle(Vehicle vehicle);
+  void parkVehicle(Vehicle* vehicle);
   void unparkVehicle(int ID);
 
   ~ParkingLot();

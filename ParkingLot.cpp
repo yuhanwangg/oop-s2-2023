@@ -17,9 +17,9 @@ ParkingLot::ParkingLot(int max_capacity) {
   count = 0;
 };
 int ParkingLot::getCount() { return count; };
-void ParkingLot::parkVehicle(Vehicle vehicle) {
+void ParkingLot::parkVehicle(Vehicle* vehicle) {
   if (count <= max_capacity) {
-    vehicles[count] = vehicle;
+    vehicles[count] = *vehicle;
     count++;
   } else {
     cout << "The lot is full" << endl;
