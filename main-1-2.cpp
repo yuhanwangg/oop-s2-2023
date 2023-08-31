@@ -16,24 +16,24 @@ int main(void) {
   bool full = false;
   int count = 0;
 
-  while (full == false) {
+  while (count < 10) {
     std::cout << "What vehicle type?" << std::endl;
     std::cin >> vehicleType;
 
     if (vehicleType == "c" || vehicleType == "C") {
-      count++;
       Car *newVehicle = new Car(count);
       lot->parkVehicle(newVehicle);
+      count++;
       std::cout << "Car parked";
     } else if (vehicleType == "b" || vehicleType == "B") {
+      Bus newVehicle = Bus(count);
+      lot->parkVehicle(&newVehicle);
       count++;
-      Bus *newVehicle = new Bus(count);
-      lot->parkVehicle(newVehicle);
       std::cout << "Bus parked";
     } else if (vehicleType == "m" || vehicleType == "M") {
-      count++;
       Motorbike *newVehicle = new Motorbike(count);
       lot->parkVehicle(newVehicle);
+      count++;
       std::cout << "Motorbike parked";
     }
     if (lot->getCount() == 10) {

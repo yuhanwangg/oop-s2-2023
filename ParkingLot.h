@@ -12,7 +12,7 @@ class ParkingLot {
   int count;
 
  public:
-  Vehicle* vehicles[];
+  Vehicle* vehicles;
   ParkingLot();
   ParkingLot(int max_capacity);
   int getCount();
