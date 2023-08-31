@@ -11,8 +11,8 @@ ParkingLot::ParkingLot() {
   max_capacity = 0;
   count = 0;
 };
-ParkingLot::ParkingLot(int max_capacity) {
-  this->max_capacity = max_capacity;
+ParkingLot::ParkingLot(int _max_capacity) {
+  max_capacity = _max_capacity;
   vehicles = new Vehicle(max_capacity);
   count = 0;
 };
@@ -28,16 +28,18 @@ void ParkingLot::parkVehicle(Vehicle* vehicle) {
 };
 void ParkingLot::unparkVehicle(int ID) {
   bool unparked = false;
-  for (int i = 0; i < count; i++) {
+  int i = 0;
+  while (unparked == false && i < count) {
     if (vehicles[i].getID() == ID) {
-      unparked = true;
       for (int j = i; j + 1 < count; j++) {
         vehicles[j] = vehicles[j + 1];
       }
       vehicles[count] = NULL;
       count--;
+      unparked = true;
+      i++;
     }
-    if (unparked == false) {
+    if (unparked == false && i == count) {
       std::cout << "Vehicle not in lot";
     }
   }
