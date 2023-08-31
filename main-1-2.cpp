@@ -23,6 +23,7 @@ int main(void) {
   parking.parkVehicle(v2);
   cout << parking.getCount() << "\n";
   parking.unparkVehicle(2934);
+  parking.unparkVehicle(1000);
   cout << parking.getCount() << endl;
   parking.printVehicle();
 
