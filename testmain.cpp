@@ -31,11 +31,14 @@ int main(void) {
   for (int i = 0; i < nCars; i++) {
     parking.parkVehicle(new Car(ID_count++));
   }
+  for (int i = 0; i < nBuses; i++) {
+    parking.parkVehicle(new Bus(ID_count++));
+  }
 
   cout << parking.getCount() << "\n";
   parking.unparkVehicle(1);
   parking.unparkVehicle(3);
-  cout << parking.getCount();
+  cout << parking.getCount() << "\n";
   parking.printVehicle();
   cout << endl;
 

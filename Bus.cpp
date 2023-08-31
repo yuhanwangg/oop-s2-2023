@@ -4,7 +4,7 @@
 #include <iostream>
 
 int Bus::getParkingDuration() {
-  int duration = (time(NULL) - timeofEntry) * 0.85;
+  int duration = (time(NULL) - timeofEntry) * 0.75;
   return duration;
 }
 Bus::Bus() {

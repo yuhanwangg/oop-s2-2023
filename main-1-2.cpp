@@ -11,7 +11,7 @@ int main(void) {
   // number of vehicles
   ParkingLot parking = ParkingLot(10);
   Car v = Car(2934);
-  Bus v2(38204);
+  Bus v2 = Bus(38204);
   // Vehicle v2(14356);
   // Vehicle v3(90680);
   // Vehicle v4(27938);

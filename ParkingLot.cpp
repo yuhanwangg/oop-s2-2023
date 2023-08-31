@@ -31,10 +31,10 @@ void ParkingLot::unparkVehicle(int ID) {
   int i = 0;
   while (unparked == false && i < count) {
     if (vehicles[i].getID() == ID) {
-      for (int j = i; j + 1 < count; j++) {
+      for (int j = i; j < count - 1; j++) {
         vehicles[j] = vehicles[j + 1];
       }
-      vehicles[count] = Vehicle();
+      vehicles[count] = NULL;
       count--;
       unparked = true;
     }
@@ -47,7 +47,7 @@ void ParkingLot::unparkVehicle(int ID) {
 
 void ParkingLot::printVehicle() {
   for (int i = 0; i < count; i++) {
-    std::cout << vehicles[i].getID();
+    std::cout << vehicles[i].getID() << " ";
   }
 }
 
