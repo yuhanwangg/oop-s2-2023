@@ -16,7 +16,3 @@ Bus::Bus(int ID) {
   timeofEntry = time(0);
   this->ID = ID;
 }
-
-// Car::~Car() {}
-
-#include <string.h>
