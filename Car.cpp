@@ -18,5 +18,3 @@ Car::Car(int ID) {
 }
 
 // Car::~Car() {}
-
-#include <string.h>
