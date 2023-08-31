@@ -28,17 +28,15 @@ void ParkingLot::parkVehicle(Vehicle* vehicle) {
 };
 void ParkingLot::unparkVehicle(int ID) {
   bool unparked = false;
-  int i = 0;
-  while (unparked == false && i < count) {
+  for (int i = 0; i < count; i++) {
     if (vehicles[i].getID() == ID) {
-      for (int j = i; j < count - 1; j++) {
-        vehicles[j] = vehicles[j + 1];
-      }
-      vehicles[count] = NULL;
+      // for (int j = i; j < count - 1; j++) {
+      //   vehicles[j] = vehicles[j + 1];
+      // }
+      vehicles[count] = Vehicle();
       count--;
       unparked = true;
     }
-    i++;
     if (unparked == false && i == count) {
       std::cout << "Vehicle not in the lot";
     }
