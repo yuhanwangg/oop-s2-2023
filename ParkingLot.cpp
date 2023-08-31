@@ -26,22 +26,10 @@ void ParkingLot::parkVehicle(Vehicle* vehicle) {
     std::cout << "The lot is full" << std::endl;
   }
 };
+
 void ParkingLot::unparkVehicle(int _ID) {
   bool unparked = false;
-  // for (int i = 0; i < count; i++) {
-  //   if (vehicles[i].getID() == ID) {
-  //     vehicles[i] = Vehicle();
-  //     for (int j = i; j < max_capacity; j++) {
-  //       vehicles[j] = vehicles[j + 1];
-  //     }
-  //     count--;
-  //     unparked = true;
-  //   }
-  // }
-  // if (unparked == false) {
-  //   std::cout << "Vehicle not in the lot";
-  // }
-  for (int i = 0; i < max_capacity; i++) {
+  for (int i = 0; i < count; i++) {
     if (vehicles[i].getID() == _ID) {
       vehicles[i] = Vehicle();
       for (int j = i; j < max_capacity; j++) {
