@@ -29,7 +29,7 @@ void ParkingLot::parkVehicle(Vehicle* vehicle) {
 
 void ParkingLot::unparkVehicle(int _ID) {
   bool unparked = false;
-  for (int i = 0; i < count; i++) {
+  for (int i = 0; i < max_capacity; i++) {
     if (vehicles[i].getID() == _ID) {
       vehicles[i] = Vehicle();
       count--;
