@@ -18,7 +18,7 @@ ParkingLot::ParkingLot(int max_capacity) {
 };
 int ParkingLot::getCount() { return count; };
 void ParkingLot::parkVehicle(Vehicle* vehicle) {
-  if (count <= max_capacity) {
+  if (count + 1 <= max_capacity) {
     vehicles[count] = *vehicle;
     std::cout << "Parking successful" << std::endl;
     count++;
