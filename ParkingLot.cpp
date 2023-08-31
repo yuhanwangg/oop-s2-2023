@@ -37,7 +37,7 @@ void ParkingLot::unparkVehicle(int ID) {
       count--;
       unparked = true;
     }
-    if (unparked == false && i == count) {
+    if (unparked == false) {
       std::cout << "Vehicle not in the lot";
     }
   }
