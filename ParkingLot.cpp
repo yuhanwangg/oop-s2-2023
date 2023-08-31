@@ -33,7 +33,7 @@ void ParkingLot::unparkVehicle(int ID) {
       // for (int j = i; j < count - 1; j++) {
       //   vehicles[j] = vehicles[j + 1];
       // }
-      vehicles[count] = Vehicle();
+      vehicles[i] = Vehicle();
       count--;
       unparked = true;
     }
