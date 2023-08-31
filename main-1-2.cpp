@@ -9,7 +9,7 @@ using namespace std;
 
 int main(void) {
   // number of vehicles
-  ParkingLot parking(5);
+  ParkingLot parking(1);
   Vehicle v(2934);
   Vehicle* v1 = &v;
   Vehicle v22(38204);
