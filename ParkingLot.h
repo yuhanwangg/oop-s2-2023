@@ -10,14 +10,15 @@ class ParkingLot {
  protected:
   int max_capacity;
   int count;
+  Vehicle* vehicles;
 
  public:
-  Vehicle* vehicles;
   ParkingLot();
   ParkingLot(int max_capacity);
   int getCount();
   void parkVehicle(Vehicle* vehicle);
   void unparkVehicle(int ID);
+  void printVehicle();
 
   ~ParkingLot();
 };

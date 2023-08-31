@@ -12,12 +12,20 @@ int main(void) {
   ParkingLot parking(5);
   Vehicle v(2934);
   Vehicle* v1 = &v;
-  Vehicle v2(14356);
-  Vehicle v3(90680);
-  Vehicle v4(27938);
-  Vehicle v5(38902);
-  Vehicle v6(32859);
+  Vehicle v22(38204);
+  Vehicle* v2 = &v22;
+  // Vehicle v2(14356);
+  // Vehicle v3(90680);
+  // Vehicle v4(27938);
+  // Vehicle v5(38902);
+  // Vehicle v6(32859);
   parking.parkVehicle(v1);
+  parking.parkVehicle(v2);
+  cout << parking.getCount() << "\n";
+  parking.unparkVehicle(2934);
+  cout << parking.getCount() << endl;
+  parking.printVehicle();
+
   /*parking.parkVehicle(v2);
   parking.parkVehicle(v3);
   parking.getCount();
