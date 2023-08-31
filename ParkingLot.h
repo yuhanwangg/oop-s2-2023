@@ -10,6 +10,7 @@ class ParkingLot {
  protected:
   int max_capacity;
   int count;
+  int maxParkingDuration;
 
  public:
   Vehicle* vehicles;
@@ -19,6 +20,7 @@ class ParkingLot {
   void parkVehicle(Vehicle* vehicle);
   void unparkVehicle(int ID);
   void printVehicle();
+  int countOverstayingVehicles(int maxParkingDuration);
 
   ~ParkingLot();
 };

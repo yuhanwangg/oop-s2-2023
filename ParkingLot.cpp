@@ -49,6 +49,16 @@ void ParkingLot::printVehicle() {
   }
 }
 
+int ParkingLot::countOverstayingVehicles(int maxParkingDuration) {
+  int overstayCount = 0;
+  for (int i = 0; i < count; i++) {
+    if (vehicles[i].getParkingDuration() >= maxParkingDuration) {
+      overstayCount++;
+    }
+  }
+  return overstayCount;
+};
+
 ParkingLot::~ParkingLot(){
 
 };
