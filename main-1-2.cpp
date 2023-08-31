@@ -41,6 +41,7 @@ int main(void) {
   cout << parking.getCount() << "\n";
   parking.unparkVehicle(1);
   parking.unparkVehicle(3);
+  parking.unparkVehicle(30);
   cout << parking.getCount() << "\n";
   parking.printVehicle();
   cout << endl;
