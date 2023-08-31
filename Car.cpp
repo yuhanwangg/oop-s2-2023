@@ -12,7 +12,7 @@ Car::Car() {
   timeofEntry = time(0);
 }
 
-Car::Car(int ID) : Vehicle(ID) {
+Car::Car(int ID) {
   timeofEntry = time(0);
   this->ID = ID;
 }

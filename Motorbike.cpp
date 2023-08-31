@@ -12,7 +12,7 @@ Motorbike::Motorbike() {
   timeofEntry = time(0);
 }
 
-Motorbike::Motorbike(int ID) : Vehicle(ID) {
+Motorbike::Motorbike(int ID) {
   timeofEntry = time(0);
   this->ID = ID;
 }

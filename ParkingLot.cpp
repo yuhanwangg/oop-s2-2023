@@ -17,8 +17,9 @@ ParkingLot::ParkingLot(int _max_capacity) {
   count = 0;
 };
 int ParkingLot::getCount() { return count; };
+
 void ParkingLot::parkVehicle(Vehicle* vehicle) {
-  if (count + 1 <= max_capacity) {
+  if (count < max_capacity) {
     vehicles[count] = *vehicle;
     count++;
   } else {
