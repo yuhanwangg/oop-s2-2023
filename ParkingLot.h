@@ -10,9 +10,9 @@ class ParkingLot {
  protected:
   int max_capacity;
   int count;
-  Vehicle* vehicles;
 
  public:
+  Vehicle* vehicles[];
   ParkingLot();
   ParkingLot(int max_capacity);
   int getCount();

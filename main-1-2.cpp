@@ -11,7 +11,7 @@ int main(void) {
   // number of vehicles
 
   std::string vehicleType;
-  ParkingLot lot(10);
+  ParkingLot *lot = new ParkingLot(10);
 
   bool full = false;
   int count = 0;
@@ -21,28 +21,30 @@ int main(void) {
     std::cin >> vehicleType;
 
     if (vehicleType == "c" || vehicleType == "C") {
-      Car newVehicle = Car(count);
-      lot.parkVehicle(&newVehicle);
       count++;
+      Car *newVehicle = new Car(count);
+      lot->parkVehicle(newVehicle);
       std::cout << "Car parked";
     } else if (vehicleType == "b" || vehicleType == "B") {
-      Bus newVehicle = Bus(count);
-      lot.parkVehicle(&newVehicle);
       count++;
+      Bus *newVehicle = new Bus(count);
+      lot->parkVehicle(newVehicle);
       std::cout << "Bus parked";
     } else if (vehicleType == "m" || vehicleType == "M") {
-      Motorbike newVehicle = Motorbike(count);
-      lot.parkVehicle(&newVehicle);
       count++;
+      Motorbike *newVehicle = new Motorbike(count);
+      lot->parkVehicle(newVehicle);
       std::cout << "Motorbike parked";
     }
-    if (lot.getCount() == 10) {
+    if (lot->getCount() == 10) {
       full = true;
     }
   }
   int unparkID = 0;
 
+  lot->printVehicle();
+
   std::cout << "Enter an ID to remove" << std::endl;
   std::cin >> unparkID;
-  lot.unparkVehicle(unparkID);
+  lot->unparkVehicle(unparkID);
 }
