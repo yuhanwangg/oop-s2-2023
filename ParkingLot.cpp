@@ -32,9 +32,8 @@ void ParkingLot::unparkVehicle(int _ID) {
   bool unparked = false;
   for (int i = 0; i < max_capacity; i++) {
     if (vehicles[i]->getID() == _ID) {
-      // vehicles[i] = Vehicle();
+      vehicles[i] = new Vehicle();
       // std::cout << vehicles[i]->getID() << std::endl;
-      delete vehicles[i];
       count--;
       unparked = true;
     }
