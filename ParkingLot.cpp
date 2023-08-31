@@ -23,7 +23,7 @@ void ParkingLot::parkVehicle(Vehicle* vehicle) {
     vehicles[count] = *vehicle;
     count++;
   } else {
-    std::cout << "The lot is full";
+    std::cout << "The lot is full" << std::endl;
   }
 };
 void ParkingLot::unparkVehicle(int _ID) {
@@ -52,7 +52,7 @@ void ParkingLot::unparkVehicle(int _ID) {
     }
   }
   if (unparked == false) {
-    std::cout << "Vehicle not in the lot";
+    std::cout << "Vehicle not in the lot" << std::endl;
   }
 };
 
