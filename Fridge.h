@@ -13,8 +13,8 @@ class Fridge : public Appliance {
   Fridge();
   Fridge(int powerRating, double volume);
   void setVolume(double volume);
-  double getVolume();
-  double getPowerConsumption();
+  double get_Volume();
+  double get_PowerConsumption();
 };
 
 #endif
