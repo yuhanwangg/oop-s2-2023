@@ -4,7 +4,6 @@ using namespace std;
 #include "Fridge.h"
 
 Fridge::Fridge() {
-  powerRating = 0;
   volume = 0;
   powerConsumption = 0;
 };
