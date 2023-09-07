@@ -18,6 +18,6 @@ Fleet::Fleet() {
   fleet[2] = &Ford(1, 20000);
   fleet[2] = &Car(30000);
   fleet[2] = &Ford(2, 40000);
-  fleet[2] = &Tesla('T', 50000)
+  fleet[2] = &Tesla('T', 50000);
 };
 Car** Fleet::get_fleet() { return fleet; };
