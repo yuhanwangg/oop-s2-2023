@@ -27,18 +27,19 @@ void Tesla::chargeBattery(int mins) {
   }
 };
 void Tesla::drive(int kms) {
-  float temp_drive = batteryPercentage - (kms / 5);
+  float temp_kms = kms;
+  float temp_drive = batteryPercentage - (temp_kms / 5);
   if (temp_drive <= 0) {
     emissions = emissions + 74 * batteryPercentage * 5;
     batteryPercentage = 0;
   } else {
     emissions = emissions + 74 * kms;
-    batteryPercentage = batteryPercentage - (kms / 5);
+    batteryPercentage = batteryPercentage - (temp_kms / 5);
   }
 };
 void Tesla::set_model(char model) { this->model = model; };
 char Tesla::get_model() { return model; };
-void Tesla::set_batteryPercentage(int batt_percent) {
+void Tesla::set_batteryPercentage(float batt_percent) {
   if (batt_percent < 0) {
     batteryPercentage = 0;
   }
