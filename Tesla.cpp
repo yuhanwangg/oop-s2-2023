@@ -30,8 +30,10 @@ void Tesla::drive(int kms) {
   int temp_drive = batteryPercentage - (kms / 5);
   if (temp_drive <= 0) {
     emissions = emissions + 74 * batteryPercentage * 5;
+    batteryPercentage = 0;
   } else {
     emissions = emissions + 74 * kms;
+    batteryPercentage = batteryPercentage - (kms / 5);
   }
 };
 void Tesla::set_model(char model) { this->model = model; };
