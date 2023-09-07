@@ -14,11 +14,11 @@ Fleet::Fleet() {
   f2 = Ford(2, 40000);
   t2 = Tesla('T', 50000);
   fleet = new Car*[5];
-  fleet[1] = new Tesla[1];
-  fleet[2] = new Ford[1];
-  fleet[3] = new Car[1];
-  fleet[4] = new Ford[1];
-  fleet[5] = new Tesla[1];
+  fleet[1] = new Tesla;
+  fleet[2] = new Ford;
+  fleet[3] = new Car;
+  fleet[4] = new Ford;
+  fleet[5] = new Tesla;
   fleet[1] = &t1;
   fleet[2] = &f1;
   fleet[3] = &c1;
