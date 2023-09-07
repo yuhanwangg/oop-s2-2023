@@ -28,12 +28,12 @@ void Ford::refuel(int litres) {
 };
 void Ford::drive(int kms) {
   float temp_kms = kms;
-  float temp_drive_ford = litresOfFuel - temp_kms;
+  float temp_drive_ford = litresOfFuel - temp_kms / 5;
   if (temp_drive_ford <= 0) {
     emissions = emissions + 234 * litresOfFuel * 5;
     litresOfFuel = 0;
   } else {
-    emissions = emissions + 234 * kms;
+    emissions = emissions + 234 * kms / 5;
     litresOfFuel = temp_drive_ford;
   }
 };
