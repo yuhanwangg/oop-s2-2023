@@ -15,12 +15,19 @@ Ford::Ford(int badgeNumber, int price) {
   this->price = price;
 };
 void Ford::refuel(int litres) {
-  litresOfFuel = litresOfFuel + litres;
-  if (litresOfFuel > 60) {
-    litresOfFuel = 60;
+  int temp = litresOfFuel + litres;
+  if (temp < 61 && temp > -1) {
+    litresOfFuel = temp;
   }
-  if (litresOfFuel < 60) {
+  if (temp > 60) {
+    litresOfFuel = 60;
+  } else {
+    litresOfFuel = temp;
+  }
+  if (temp < 60) {
     litresOfFuel = 0;
+  } else {
+    litresOfFuel = temp;
   }
 };
 void Ford::drive(int kms) {

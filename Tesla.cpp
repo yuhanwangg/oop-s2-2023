@@ -15,12 +15,19 @@ Tesla::Tesla(char model, int price) {
   batteryPercentage = 0;
 };
 void Tesla::chargeBattery(int mins) {
-  batteryPercentage = batteryPercentage + 0.5 * mins;
-  if (batteryPercentage > 100) {
-    batteryPercentage = 100;
+  int temp = batteryPercentage + (0.5 * mins);
+  if (temp < 101 && temp > -1) {
+    batteryPercentage = temp;
   }
-  if (batteryPercentage < 0) {
+  if (temp > 100) {
+    batteryPercentage = 100;
+  } else {
+    batteryPercentage = temp;
+  }
+  if (temp < 0) {
     batteryPercentage = 0;
+  } else {
+    batteryPercentage = temp;
   }
 };
 void Tesla::drive(int kms) {
