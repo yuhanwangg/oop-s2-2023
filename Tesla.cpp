@@ -12,7 +12,7 @@ Tesla::Tesla() {
 Tesla::Tesla(char model, int price) {
   this->model = model;
   this->price = price;
-  batteryPercentage = 0;
+  batteryPercentage = 100;
 };
 void Tesla::chargeBattery(int mins) {
   int temp = batteryPercentage + (0.5 * mins);
