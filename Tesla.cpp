@@ -31,9 +31,9 @@ void Tesla::chargeBattery(int mins) {
   }
 };
 void Tesla::drive(int kms) {
-  batteryPercentage = batteryPercentage - (kms / 5);
-  if (batteryPercentage <= 0) {
-    emissions = emissions + 74 * 500;
+  int temp_drive = batteryPercentage - (kms / 5);
+  if (temp_drive <= 0) {
+    emissions = emissions + 74 * batteryPercentage * 5;
   } else {
     emissions = emissions + 74 * kms;
   }

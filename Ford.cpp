@@ -31,9 +31,9 @@ void Ford::refuel(int litres) {
   }
 };
 void Ford::drive(int kms) {
-  litresOfFuel = litresOfFuel - kms;
-  if (litresOfFuel <= 0) {
-    emissions = emissions + 234 * 60 * 5;
+  int temp_drive_ford = litresOfFuel - kms;
+  if (temp_drive_ford <= 0) {
+    emissions = emissions + 234 * litresOfFuel * 5;
   } else {
     emissions = emissions + 234 * kms;
   }
