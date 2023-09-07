@@ -21,13 +21,9 @@ void Ford::refuel(int litres) {
   }
   if (temp > 60) {
     litresOfFuel = 60;
-  } else {
-    litresOfFuel = temp;
   }
-  if (temp < 60) {
+  if (temp < 0) {
     litresOfFuel = 0;
-  } else {
-    litresOfFuel = temp;
   }
 };
 void Ford::drive(int kms) {
