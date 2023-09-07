@@ -28,13 +28,13 @@ void Ford::refuel(int litres) {
 };
 void Ford::drive(int kms) {
   float temp_kms = kms;
-  float temp_drive_ford = litresOfFuel - temp_kms / 5;
-  if (temp_drive_ford <= 0) {
+  float temp_drive = litresOfFuel - (temp_kms / 5);
+  if (temp_drive <= 0) {
     emissions = emissions + 234 * litresOfFuel * 5;
     litresOfFuel = 0;
   } else {
-    emissions = emissions + 234 * kms / 5;
-    litresOfFuel = temp_drive_ford;
+    emissions = emissions + 234 * kms;
+    litresOfFuel = litresOfFuel - (temp_kms / 5);
   }
 };
 void Ford::set_badgeNumber(int badgeNumber) {
