@@ -34,8 +34,10 @@ void Ford::drive(int kms) {
   int temp_drive_ford = litresOfFuel - kms;
   if (temp_drive_ford <= 0) {
     emissions = emissions + 234 * litresOfFuel * 5;
+    litresOfFuel = 0;
   } else {
     emissions = emissions + 234 * kms;
+    litresOfFuel = temp_drive_ford;
   }
 };
 void Ford::set_badgeNumber(int badgeNumber) {

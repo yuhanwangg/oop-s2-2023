@@ -21,13 +21,9 @@ void Tesla::chargeBattery(int mins) {
   }
   if (temp > 100) {
     batteryPercentage = 100;
-  } else {
-    batteryPercentage = temp;
   }
   if (temp < 0) {
     batteryPercentage = 0;
-  } else {
-    batteryPercentage = temp;
   }
 };
 void Tesla::drive(int kms) {
