@@ -15,7 +15,7 @@ Ford::Ford(int badgeNumber, int price) {
   this->price = price;
 };
 void Ford::refuel(int litres) {
-  int temp = litresOfFuel + litres;
+  float temp = litresOfFuel + litres;
   if (temp < 61 && temp > -1) {
     litresOfFuel = temp;
   }
@@ -31,7 +31,8 @@ void Ford::refuel(int litres) {
   }
 };
 void Ford::drive(int kms) {
-  int temp_drive_ford = litresOfFuel - kms;
+  float temp_kms = kms;
+  float temp_drive_ford = litresOfFuel - temp_kms;
   if (temp_drive_ford <= 0) {
     emissions = emissions + 234 * litresOfFuel * 5;
     litresOfFuel = 0;
