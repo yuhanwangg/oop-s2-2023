@@ -10,6 +10,11 @@ using namespace std;
 class Fleet {
  protected:
   Car** fleet;
+  Tesla* t1 = &Tesla('S', 10000);
+  Ford* f1 = &Ford(1, 20000);
+  Car* c1 = &Car(30000);
+  Ford* f2 = &Ford(2, 40000);
+  Tesla* t2 = &Tesla('T', 50000);
 
  public:
   Fleet();
