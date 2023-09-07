@@ -26,3 +26,5 @@ Fleet::Fleet() {
   fleet[5] = &t2;
 };
 Car** Fleet::get_fleet() { return fleet; };
+
+Fleet::~Fleet() { delete[] fleet; };
