@@ -19,10 +19,13 @@ void Ford::refuel(int litres) {
   if (litresOfFuel > 60) {
     litresOfFuel = 60;
   }
+  if (litresOfFuel < 60) {
+    litresOfFuel = 0;
+  }
 };
 void Ford::drive(int kms) {
   litresOfFuel = litresOfFuel - kms;
-  if (litresOfFuel < 0) {
+  if (litresOfFuel <= 0) {
     emissions = emissions + 234 * 60 * 5;
   } else {
     emissions = emissions + 234 * kms;
@@ -34,4 +37,14 @@ void Ford::set_badgeNumber(int badgeNumber) {
 int Ford::get_badgeNumber() { return badgeNumber; };
 
 float Ford::get_litresOfFuel() { return litresOfFuel; };
-void Ford::set_litresOfFuel(float fuel) { this->litresOfFuel = fuel; };
+void Ford::set_litresOfFuel(float fuel) {
+  if (fuel < 0) {
+    litresOfFuel = 0;
+  }
+  if (fuel > 60) {
+    litresOfFuel = 100;
+  }
+  if (fuel < 61 && fuel > -1) {
+    litresOfFuel = fuel;
+  }
+};
