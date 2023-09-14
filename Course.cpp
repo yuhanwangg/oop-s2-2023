@@ -32,3 +32,5 @@ void Course::set_course_name(string name) { this->name = name; };
 string Course::get_course_name() { return name; };
 int Course::get_course_id() { return id; };
 void Course::set_course_id(int id) { this->id = id; };
+
+Course::~Course() { delete[] persons; }

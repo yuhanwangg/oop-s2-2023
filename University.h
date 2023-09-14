@@ -12,6 +12,8 @@ class University {
   string location;
   Course* courses;
   int no_courses;
+  int course_count;
+  int no_students;
 
  public:
   University();

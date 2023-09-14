@@ -14,3 +14,5 @@ Student::Student(string name, int id, int no_courses) {
 };
 void Student::set_id(int id) { this->id = id; };
 int Student::get_id() { return id; };
+
+Student::~Student() { delete[] grades; };

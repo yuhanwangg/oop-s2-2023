@@ -10,6 +10,8 @@ class Course {
   string name;
   int id;
   Person** persons;
+  int count_person;
+  int total_people;
 
  public:
   Course();
@@ -19,6 +21,7 @@ class Course {
   string get_course_name();
   int get_course_id();
   void set_course_id(int id);
+  ~Course();
 };
 
 #endif

@@ -5,13 +5,15 @@ using namespace std;
 
 Grade::Grade() {
   student_id = 0;
+  course_id = 0;
   assignment = " ";
   value = 0;
 };
-Grade::Grade(int id, string assignment, int value) {
+Grade::Grade(int id, string assignment, int value, int course_id) {
   student_id = id;
   this->assignment = assignment;
   this->value = value;
+  this->course_id = course_id;
 };
 string Grade::get_assignment() { return assignment; };
 int Grade::get_value() { return value; };
