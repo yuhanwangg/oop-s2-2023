@@ -1,0 +1,86 @@
+#ifndef GAME_H
+#define GAME_H
+#include <cstdlib>
+#include <iostream>
+#include <tuple>
+
+#include "Effect.h"
+#include "Explosion.h"
+#include "GameEntity.h"
+#include "Mine.h"
+#include "Ship.h"
+#include "Utils.h"
+
+class Game {
+ protected:
+  std::vector<GameEntity*> entities;
+
+ public:
+  std::vector<GameEntity*> initGame(int numShips, int numMines, int gridWidth,
+                                    int gridHeight) {
+    // add the number of ships
+    for (int i = 0; i < numShips; i++) {
+      std::tuple<int, int> tempPos =
+          Utils::generateRandomPos(gridWidth, gridHeight);
+      Ship* ship = new Ship(std::get<0>(tempPos), std::get<1>(tempPos));
+      entities.push_back(ship);
+    }
+
+    // create the number of mines
+    for (int i = 0; i < numMines; i++) {
+      std::tuple<int, int> tempPos =
+          Utils::generateRandomPos(gridWidth, gridHeight);
+      Mine* mine = new Mine(std::get<0>(tempPos), std::get<1>(tempPos));
+      entities.push_back(mine);
+    }
+    return entities;
+  }
+
+  void gameLoop(int maxIterations, double mineDistanceThreshold) {
+    int s = 0;  // ship index
+    int m = 0;  // mine index
+    std::tuple<int, int> tempShipPos;
+    std::tuple<int, int> tempMinePos;
+    double tempSum1 = 0;
+    double tempSum2 = 0;
+    double tempDistance = 0;
+    while (s < maxIterations && m < maxIterations) {
+      if (entities[s]->getType() == 'S') {
+        Ship* ship = dynamic_cast<Ship*>(
+            entities[s]);  // only need to use dynamic cast if you're dealing
+                           // with pointers, which we are
+        // std::tuple<int, int> tempPos = std::make_tuple(1, 0);
+        ship->move(1, 0);
+        tempShipPos = ship->getPos();
+        s++;
+
+      } else {
+        s++;
+      }
+      if (entities[m]->getType() == 'M') {
+        Mine* mine = dynamic_cast<Mine*>(entities[m]);  // dynamic casting
+        tempMinePos = mine->getPos();
+
+        // distance between mine and ship calculate
+        tempDistance = Utils::calculateDistance(tempShipPos, tempMinePos);
+
+        if (tempDistance < mineDistanceThreshold) {
+          // checking if within threshold;
+          mine->explode();
+          std::cout << "ship exploded";
+        }
+        m++;
+      } else {
+        m++;
+      }
+    }
+  }
+
+  // setters and getters
+  std::vector<GameEntity*> get_entities() { return entities; };
+  void set_entities(std::vector<GameEntity*> entities) {
+    this->entities = entities;
+  }
+};
+
+#endif
