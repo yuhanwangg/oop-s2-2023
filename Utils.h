@@ -2,6 +2,7 @@
 #define UTILS_H
 #include <math.h>
 
+#include <cstdlib>
 #include <iostream>
 #include <tuple>
 
@@ -31,6 +32,7 @@ class Utils {
     double sum2 = y2 - y1;
 
     double distance = sqrt(pow(sum1, 2) + pow(sum2, 2));
+    distance = abs(distance);
     return distance;
   }
   ~Utils();
