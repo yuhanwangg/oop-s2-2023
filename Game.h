@@ -56,8 +56,7 @@ class Game {
 
     // moving all ships
     while (iterations < maxIterations) {
-      for (std::__1::__wrap_iter<Ship**> shipIt = shipEntities.begin();
-           shipIt != shipEntities.end();) {
+      for (auto shipIt = shipEntities.begin(); shipIt != shipEntities.end();) {
         isDestroyed = false;
 
         (*shipIt)->move(1, 0);
