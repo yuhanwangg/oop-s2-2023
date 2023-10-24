@@ -38,14 +38,24 @@ class Game {
   }
 
   void gameLoop(int maxIterations, double mineDistanceThreshold) {
+    int iterations = 0;
     int s = 0;  // ship index
     int m = 0;  // mine index
-    std::tuple<int, int> tempShipPos;
-    std::tuple<int, int> tempMinePos;
     double tempSum1 = 0;
     double tempSum2 = 0;
     double tempDistance = 0;
-    while (s < maxIterations && m < maxIterations) {
+    int shipsDestroyed = 0;
+    bool isDestroyed = false;
+
+    while (iterations < maxIterations) {
+      s = 0;
+      m = 0;
+      std::tuple<int, int> tempShipPos;
+      std::tuple<int, int> tempMinePos;
+      tempSum1 = 0;
+      tempSum2 = 0;
+      tempDistance = 0;
+      isDestroyed = false;
       if (entities[s]->getType() == 'S') {
         Ship* ship = dynamic_cast<Ship*>(
             entities[s]);  // only need to use dynamic cast if you're dealing
@@ -53,27 +63,37 @@ class Game {
         // std::tuple<int, int> tempPos = std::make_tuple(1, 0);
         ship->move(1, 0);
         tempShipPos = ship->getPos();
-        s++;
 
-      } else {
-        s++;
-      }
-      if (entities[m]->getType() == 'M') {
-        Mine* mine = dynamic_cast<Mine*>(entities[m]);  // dynamic casting
-        tempMinePos = mine->getPos();
+        if (entities[m]->getType() == 'M') {
+          Mine* mine = dynamic_cast<Mine*>(entities[m]);  // dynamic casting
+          tempMinePos = mine->getPos();
 
-        // distance between mine and ship calculate
-        tempDistance = Utils::calculateDistance(tempShipPos, tempMinePos);
+          // distance between mine and ship calculate
+          tempDistance = Utils::calculateDistance(tempShipPos, tempMinePos);
 
-        if (tempDistance < mineDistanceThreshold) {
-          // checking if within threshold;
-          mine->explode();
-          std::cout << "ship exploded";
+          if (tempDistance < mineDistanceThreshold) {
+            // checking if within threshold;
+            Explosion explosion = mine->explode();
+            GameEntity* gm = dynamic_cast<GameEntity*>(ship);  // replacing
+            explosion.apply(*gm);
+            std::cout << "ship exploded";
+
+            shipsDestroyed++;
+            isDestroyed = true;
+          }
+        } else {
+          m++;
         }
-        m++;
-      } else {
-        m++;
+
+        if (isDestroyed == true) {
+          entities.erase(entities.begin() + s);
+          entities.erase(entities.begin() + m);
+          break;
+        } else {
+          s++;
+        }
       }
+      iterations++;
     }
   }
 
