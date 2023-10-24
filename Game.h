@@ -3,6 +3,7 @@
 #include <cstdlib>
 #include <iostream>
 #include <tuple>
+#include <vector>
 
 #include "Effect.h"
 #include "Explosion.h"
