@@ -99,13 +99,13 @@ class Game {
     return;
   }
 
-  ~Game() {
-    for (int i = 0; i < numShips + numMines; i++) {
-      delete (entities[i]);
-      entities.clear();
-      shipEntities.clear();
-      mineEntities.clear();
-    }
-  }
+  //   ~Game() {
+  //     for (int i = 0; i < numShips + numMines; i++) {
+  //       delete (entities[i]);
+  //       entities.clear();
+  //       shipEntities.clear();
+  //       mineEntities.clear();
+  //     }
+  //   }
 };
 #endif
