@@ -25,8 +25,8 @@ class Utils {
   static double calculateDistance(std::tuple<int, int> pos1,
                                   std::tuple<int, int> pos2) {
     double x1 = std::get<0>(pos1);  // gets the pos1 x
-    double x2 = std::get<1>(pos1);  // gets pos2 x
-    double y1 = std::get<0>(pos2);
+    double y1 = std::get<1>(pos1);  // gets pos2 x
+    double x2 = std::get<0>(pos2);
     double y2 = std::get<1>(pos2);
     double sum1 = x2 - x1;
     double sum2 = y2 - y1;
