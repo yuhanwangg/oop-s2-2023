@@ -71,8 +71,7 @@ class Play {
           std::tuple<int, int> tempLoc = personaMatrix[i]->getLoc();
           if (std::get<0>(tempLoc) > matrixWidth ||
               std::get<0>(tempLoc) > matrixHeight) {
-            //   std::cout << "Persona has won the game!"
-            //             << "\n";
+            std::cout << "Persona has won the game!";
             winCondition = true;
             finished = true;
           }
@@ -99,8 +98,7 @@ class Play {
       iterations++;  // checking iterations
 
       if (iterations > maxCycles) {
-        std::cout << "Maximum number of cycles reached. Game over."
-                  << "\n";
+        std::cout << "Maximum number of cycles reached. Game over.";
         finished = true;
       }
     }
