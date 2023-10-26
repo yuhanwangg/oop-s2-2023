@@ -57,7 +57,7 @@ class Game {
     // moving all ships
     while (iterations < maxIterations) {
       for (auto shipIt = shipEntities.begin(); shipIt != shipEntities.end();) {
-        isDestroyed = false;
+        isDestroyed = false;  // shipIt is assigned as auto, it's like int i
 
         (*shipIt)->move(1, 0);
 
