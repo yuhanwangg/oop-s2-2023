@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <tuple>
+#include <vector>
 
 #include "Assists.h"
 #include "Influence.h"
