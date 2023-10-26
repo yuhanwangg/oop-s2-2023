@@ -13,8 +13,6 @@
 class Play {
  private:
   std::vector<Spot*> matrix;
-  std::vector<Snare*> snareMatrix;
-  std::vector<Persona*> personaMatrix;
   int personaCount;
   int snareCount;
   bool winCondition;
@@ -38,7 +36,6 @@ class Play {
       Persona* persona =
           new Persona(std::get<0>(tempLoc), std::get<1>(tempLoc));
       matrix.push_back(persona);
-      personaMatrix.push_back(persona);
       personaCount++;
     }
 
@@ -47,7 +44,6 @@ class Play {
           Assists::createRandomLoc(matrixWidth, matrixHeight);
       Snare* snare = new Snare(std::get<0>(tempLoc), std::get<1>(tempLoc));
       matrix.push_back(snare);
-      snareMatrix.push_back(snare);
       snareCount++;
     }
     this->matrixHeight = matrixHeight;
@@ -62,13 +58,13 @@ class Play {
     int s = 0;
     while (!finished) {
       for (int i = 0; i < matrix.size(); i++) {
-        if (personaMatrix[p]->getCategory() == 'P') {
+        if (matrix[i]->getCategory() == 'P') {
           std::cout << "successfully shifted from x= "
                     << std::get<0>(matrix[i]->getLoc())
                     << ",y= " << std::get<1>(matrix[i]->getLoc()) << "\n";
-          personaMatrix[p]->shift(1, 0);
+          matrix[i]->shift(1, 0);  // first shifting
 
-          std::tuple<int, int> tempLoc = personaMatrix[p]->getLoc();
+          std::tuple<int, int> tempLoc = matrix[i]->getLoc();
           if (std::get<0>(tempLoc) > matrixWidth ||
               std::get<0>(tempLoc) > matrixHeight) {
             std::cout << "Persona has won the game!"
@@ -77,20 +73,18 @@ class Play {
             finished = true;
           }
 
-          if (snareMatrix[s]->getCategory() == 'S') {
+          if (matrix[s]->getCategory() == 'S') {
             std::cout << "snare found"
                       << "\n";
-            if (Assists::evaluateDistance(personaMatrix[p]->getLoc(),
-                                          snareMatrix[s]->getLoc()) <
+            if (Assists::evaluateDistance(matrix[i]->getLoc(),
+                                          matrix[s]->getLoc()) <
                 snareTriggerDistance)
-              snareMatrix[s]->implement(*personaMatrix[p]);
+              matrix[s]->implement(*matrix[i]);
             matrix[i]->setCategory('S');
             std::cout << "persona is now: " << matrix[i]->getCategory() << "\n";
           } else {
             s++;
           }
-        } else {
-          p++;
         }
       }
 
@@ -106,5 +100,4 @@ class Play {
   // getter and setter
   std::vector<Spot*>& getMatrix() { return matrix; }
 };
-
 #endif
