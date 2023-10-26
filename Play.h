@@ -62,7 +62,8 @@ class Play {
     int s = 0;
     while (!finished) {
       for (int i = 0; i < matrix.size(); i++) {
-        if (personaMatrix[p]->getCategory() == 'P') {
+        if (personaMatrix[p]->getCategory() == 'P' &&
+            p < personaMatrix.size()) {
           std::cout << "successfully shifted from x= "
                     << std::get<0>(matrix[i]->getLoc())
                     << ",y= " << std::get<1>(matrix[i]->getLoc()) << "\n";
@@ -77,7 +78,7 @@ class Play {
             finished = true;
           }
 
-          if (snareMatrix[s]->getCategory() == 'S') {
+          if (snareMatrix[s]->getCategory() == 'S' && s < snareMatrix.size()) {
             std::cout << "snare found"
                       << "\n";
             if (Assists::evaluateDistance(personaMatrix[p]->getLoc(),
