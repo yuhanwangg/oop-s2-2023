@@ -67,13 +67,15 @@ class Play {
           (personaMatrix[p]->getCategory() == 'P')) {
         personaMatrix[p]->shift(1, 0);
 
-        std::tuple<int, int> tempLoc = personaMatrix[p]->getLoc();
-        if (std::get<0>(tempLoc) > matrixWidth ||
-            std::get<0>(tempLoc) > matrixHeight) {
-          //   std::cout << "Persona has won the game!"
-          //             << "\n";
-          winCondition = true;
-          finished = true;
+        for (int i = 0; i < personaMatrix.size(); i++) {
+          std::tuple<int, int> tempLoc = personaMatrix[i]->getLoc();
+          if (std::get<0>(tempLoc) > matrixWidth ||
+              std::get<0>(tempLoc) > matrixHeight) {
+            //   std::cout << "Persona has won the game!"
+            //             << "\n";
+            winCondition = true;
+            finished = true;
+          }
         }
 
         if ((s < snareMatrix.size()) &&
