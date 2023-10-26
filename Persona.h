@@ -8,12 +8,16 @@
 class Persona : public Spot {
  protected:
  public:
-  Persona() { category = ' '; }
+  //   Persona() { category = ' '; }
   Persona(int x, int y) {
-    setLoc(x, y);
+    location = std::make_tuple(x, y);
     category = 'P';
   }
-  void shift(int dx, int dy) { location = std::make_tuple(dx, dy); }
+  void shift(int dx, int dy) {
+    int x = std::get<0>(location);
+    int y = std::get<1>(location);
+    location = std::make_tuple(dx + x, dy + y);
+  }
 };
 
 #endif

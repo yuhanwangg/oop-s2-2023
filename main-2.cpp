@@ -15,4 +15,9 @@ int main() {
   std::cout << "person category is: " << person.getCategory() << "\n";
   snare.implement(person);
   std::cout << "person changed category is: " << person.getCategory();
+  std::cout << "location: " << std::get<0>(person.getLoc())
+            << std::get<1>(person.getLoc());
+  person.shift(2, 2);
+  std::cout << "location: " << std::get<0>(person.getLoc())
+            << std::get<1>(person.getLoc());
 }
