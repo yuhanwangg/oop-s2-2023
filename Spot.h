@@ -20,13 +20,14 @@ class Spot {
     this->category = category;
   }
   std::tuple<int, int> getLoc() { return location; }
-  virtual char getCategory() { return category; }
-  virtual void setLoc(int x, int y) { location = std::make_tuple(x, y); }
-  virtual void setCategory(char category) { this->category = category; }
-  virtual void shift(int dx, int dy) { location = std::make_tuple(dx, dy); }
+  char getCategory() { return category; }
+  void setLoc(int x, int y) { location = std::make_tuple(x, y); }
+  void setCategory(char category) { this->category = category; }
+  //   virtual void shift(int dx, int dy) { location = std::make_tuple(dx, dy);
+  //   }
   // changes spot category to 'S' and deactivates snare when implement() is
   // called
-  virtual void implement(Spot& spot) { spot.setCategory('S'); }
+  //   virtual void implement(Spot& spot) { spot.setCategory('S'); }
   virtual void x(){};
 };
 
