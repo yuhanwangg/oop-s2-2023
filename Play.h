@@ -98,7 +98,8 @@ class Play {
       iterations++;  // checking iterations
 
       if (iterations > maxCycles) {
-        std::cout << "Maximum number of cycles reached. Game over.";
+        std::cout << "Maximum number of cycles reached. Game over."
+                  << "\n";
         finished = true;
       }
     }
