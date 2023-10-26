@@ -10,7 +10,7 @@ class Persona : public Spot {
  public:
   Persona() { category = ' '; }
   Persona(int x, int y) {
-    location = std::make_tuple(x, y);
+    setLoc(x, y);
     category = 'P';
   }
   void shift(int dx, int dy) { location = std::make_tuple(dx, dy); }
